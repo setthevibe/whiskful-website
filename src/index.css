@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+/* Whiskful Moments brand: colours and fonts used across the whole app */
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+
+  --color-cream: #FDFCF3;
+
+  /* Blush: logo pink, used for orders and highlights */
+  --color-blush-50: #FFF4F3;
+  --color-blush-100: #FCE1E5;
+  --color-blush-200: #F9D6DA;
+  --color-blush-300: #F6C6CA;
+  --color-blush-400: #F49AB0;
+  --color-blush-700: #8C3A4C;
+  --color-blush-800: #7A2E3D;
+
+  /* Cocoa: the whisk handle, used for text and headings */
+  --color-cocoa-400: #8A6F6F;
+  --color-cocoa-500: #6B3A3A;
+  --color-cocoa-800: #4A2B2B;
+  --color-cocoa-900: #3A2E2E;
+
+  /* Fun pastels, one per part of the business */
+  --color-butter-100: #FFF1C9;  /* payments */
+  --color-butter-800: #6B4A04;
+  --color-mint-100: #DDF4E9;    /* money in, all good */
+  --color-mint-800: #18563D;
+  --color-lavender-100: #ECE7FB; /* baking */
+  --color-lavender-800: #3D3180;
+  --color-caramel-50: #FFF6EC;   /* pantry and stock */
+  --color-caramel-200: #FAD9B5;
+  --color-caramel-800: #6B3A1A;
+  --color-sky-100: #E0EEFB;      /* collection and delivery */
+  --color-sky-800: #1D4F7A;
+}
+
+/* Defaults for every page */
+@layer base {
+  body {
+    @apply bg-cream text-cocoa-900 font-sans antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display text-cocoa-800;
+  }
+}
+/* Grids never grow wider than the screen. A long line of text gets "…"
+   instead of pushing the page sideways. Pages that ask for columns
+   (sm:grid-cols-2 etc.) still get them, because those rules win over this. */
+@layer base {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
