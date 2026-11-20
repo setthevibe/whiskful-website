@@ -3,6 +3,7 @@ import { ScrollToTop } from './components/ScrollToTop'
 import { SiteLayout } from './components/SiteLayout'
 import { HomePage } from './pages/HomePage'
 import { PlaceholderPage } from './pages/PlaceholderPage'
+import { MenuPage } from './pages/MenuPage'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="menu" element={<PlaceholderPage title="Menu" text="Flavours, box sizes and prices are on their way." />} />
+          <Route path="menu" element={<MenuPage />} />
           <Route path="about" element={<PlaceholderPage title="About" text="Our story is on its way." />} />
           <Route path="faq" element={<PlaceholderPage title="Questions" text="Answers are on their way." />} />
           <Route path="order" element={<PlaceholderPage title="Order" text="Online ordering opens soon." />} />
