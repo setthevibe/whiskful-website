@@ -5,7 +5,7 @@ export const site = {
   whatsappUrl: 'https://wa.me/27721011269',
   instagramHandle: '@whiskful.moments',
   instagramUrl: 'https://www.instagram.com/whiskful.moments/',
-  email: 'robynpienaar35@gmail.com',
+  email: 'whiskfulmoments.sa@gmail.com',
     // Your own photos: put them in public/photos and type the path, e.g. '/photos/classic.jpg'.
   // Empty means the drawing is shown instead.
   photos: { classic: '', oreo: '', biscoff: '', about: '' },

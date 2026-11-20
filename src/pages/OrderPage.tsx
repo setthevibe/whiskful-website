@@ -172,7 +172,7 @@ export function OrderPage() {
     if (!name.trim()) return setErrorMessage('Enter your name.')
     if (!normalizePhone(phone)) return setErrorMessage('Enter a valid South African cellphone number, like 072 123 4567.')
     if (!payment) return setErrorMessage('Choose how you’d like to pay.')
-    if (!token) return setErrorMessage('Please tick the “I’m human” box.')
+    if (!token) return setErrorMessage('Just a moment, we’re still checking your connection. Try again in a few seconds.')
 
     setSending(true)
     try {
