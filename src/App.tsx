@@ -6,6 +6,7 @@ import { PlaceholderPage } from './pages/PlaceholderPage'
 import { MenuPage } from './pages/MenuPage'
 import { AboutPage } from './pages/AboutPage'
 import { FaqPage } from './pages/FaqPage'
+import { OrderPage } from './pages/OrderPage'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="menu" element={<MenuPage />} />
          <Route path="about" element={<AboutPage />} />
          <Route path="faq" element={<FaqPage />} />
-          <Route path="order" element={<PlaceholderPage title="Order" text="Online ordering opens soon." />} />
+          <Route path="order" element={<OrderPage />} />
           <Route path="*" element={<PlaceholderPage title="Page not found" text="That page doesn’t exist. Try the menu above." />} />
         </Route>
       </Routes>

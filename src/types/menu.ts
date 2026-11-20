@@ -29,6 +29,8 @@ export type MenuBusiness = {
   name: string
   instagram_handle: string | null
   collection_area: string | null
+  saturday_start: string
+  saturday_end: string
   sunday_collection_start: string
   sunday_collection_end: string
   order_open_day: number
