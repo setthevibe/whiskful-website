@@ -4,6 +4,7 @@ import { useMenu } from '../hooks/useMenu'
 import { allergenLabels } from '../types/menu'
 import { formatRand } from '../utils/format'
 import { orderWindowStatus } from '../utils/orderWindow'
+import { FlavourArt } from '../components/illustrations'
 
 const cardColours = ['bg-blush-100', 'bg-caramel-50', 'bg-lavender-100']
 
@@ -41,6 +42,7 @@ export function MenuPage() {
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {products.map((product, index) => (
           <article key={product.id} className={`flex flex-col rounded-3xl p-6 ${cardColours[index % cardColours.length]}`}>
+           <FlavourArt name={product.name} className="mb-4 h-20 w-20" />
             <h2 className="text-2xl">{product.name}</h2>
             {product.description && <p className="mt-2 text-sm text-cocoa-500">{product.description}</p>}
 
