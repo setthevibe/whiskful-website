@@ -17,8 +17,17 @@ export type MenuSize = {
   price: number
 }
 
+// Cinnamon rolls, cookies…
+export type MenuCategory = {
+  id: string
+  name: string
+  unit_singular: string
+  unit_plural: string
+}
+
 export type MenuProduct = {
   id: string
+  category_id: string
   name: string
   description: string | null
   allergens: Allergen[]
@@ -44,5 +53,6 @@ export type MenuBusiness = {
 
 export type Menu = {
   business: MenuBusiness
+  categories?: MenuCategory[]
   products: MenuProduct[]
 }

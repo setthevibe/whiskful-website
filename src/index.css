@@ -62,4 +62,12 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
   }
+
+  /* A slow side-to-side tilt, for the baking tools */
+  --animate-sway: sway 6s ease-in-out infinite;
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-6deg) translateY(0); }
+    50% { transform: rotate(6deg) translateY(-6px); }
+  }
 }

@@ -60,7 +60,7 @@ export function FaqPage() {
           </p>
         </FaqItem>
 
-        <FaqItem question="When do I get my rolls?">
+        <FaqItem question="When do I get my order?">
           <p>
             {business
               ? `You choose Saturday, or Sunday between ${business.sunday_collection_start} and ${business.sunday_collection_end}, and we confirm the time with you on WhatsApp.`
@@ -92,10 +92,21 @@ export function FaqPage() {
         </FaqItem>
 
         {/* ✏️ Check this matches your own recipe and how long yours keep */}
-        <FaqItem question="How do I store and reheat them?">
+        <FaqItem question="How do I store and reheat cinnamon rolls?">
           <p>
             They’re best on the day. Because of the cream cheese icing, keep leftovers covered in the fridge and enjoy them
             within 2 days. Warm one for 15 to 20 seconds in the microwave and it’s soft and gooey again.
+          </p>
+        </FaqItem>
+
+        <FaqItem question="How do I store and reheat cookies?">
+          <p>
+            Keep them in an airtight container at room temperature, and they’ll last up to 3 days. For that fresh-baked
+            feeling, warm one in the microwave for about 10 seconds.
+          </p>
+          <p>
+            You can also freeze them for up to 2 months. To thaw, leave them at room temperature for 2 to 3 hours, or warm
+            them in the oven at 180 °C for 5 to 7 minutes.
           </p>
         </FaqItem>
 
@@ -109,7 +120,7 @@ export function FaqPage() {
             </p>
           ))}
           <p>
-            Everything is made in a home kitchen that also uses these ingredients, so we can’t promise any roll is free of
+            Everything is made in a home kitchen that also uses these ingredients, so we can’t promise anything is free of
             them. Message us if you have an allergy and we’ll help you choose.
           </p>
         </FaqItem>
