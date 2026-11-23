@@ -1,8 +1,8 @@
 // Contact details shown around the website
 export const site = {
   name: 'Whiskful Moments',
-  phoneDisplay: '072 101 1269',
-  whatsappUrl: 'https://wa.me/27721011269',
+  phoneDisplay: '069 147 0149',
+  whatsappUrl: 'https://wa.me/27691470149',
   instagramHandle: '@whiskful.moments',
   instagramUrl: 'https://www.instagram.com/whiskful.moments/',
   email: 'whiskfulmoments.sa@gmail.com',
