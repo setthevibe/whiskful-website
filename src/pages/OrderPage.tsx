@@ -175,6 +175,7 @@ export function OrderPage() {
   ).filter((line) => line.quantity > 0)
   const boxes = lines.reduce((sum, line) => sum + line.quantity, 0)
   const total = lines.reduce((sum, line) => sum + line.quantity * line.size.price, 0)
+  const orderAllergens = [...new Set(lines.flatMap((line) => line.product.allergens))].sort()
   const boxesIn = (filter: (line: (typeof lines)[number]) => boolean) =>
     lines.filter(filter).reduce((sum, line) => sum + line.quantity, 0)
 
@@ -372,9 +373,12 @@ export function OrderPage() {
                       <div className="border-t border-blush-100 bg-cream px-4 pb-2">
                         {product.description && <p className="pt-3 text-sm text-cocoa-500">{product.description}</p>}
                         {product.allergens.length > 0 && (
-                          <p className="pt-1 text-xs text-cocoa-400">
+                          <p className="pt-2 text-xs font-semibold text-blush-800">
                             Contains: {product.allergens.map((allergen) => allergenLabels[allergen]).join(', ')}
                           </p>
+                        )}
+                        {product.ingredients && product.ingredients.length > 0 && (
+                          <p className="pt-1 text-xs text-cocoa-400">Ingredients: {product.ingredients.join(', ')}</p>
                         )}
                         <ul className="divide-y divide-blush-100">
                           {product.sizes.map((size) => {
@@ -608,6 +612,21 @@ export function OrderPage() {
               <p className="mt-1 text-sm text-cocoa-500">{payment === 'card' ? 'Paying by card' : 'Paying by EFT'}</p>
               {notes.trim() && <p className="mt-1 text-sm italic text-cocoa-500">“{notes.trim()}”</p>}
             </Card>
+
+            {orderAllergens.length > 0 && (
+              <div className="rounded-3xl border border-butter-100 bg-butter-100/60 p-5 text-butter-800">
+                <p className="font-semibold">Allergy check</p>
+                <p className="mt-1 text-sm">
+                  Your order contains: <strong>{orderAllergens.map((allergen) => allergenLabels[allergen]).join(', ')}</strong>.
+                  Everything is made in a home kitchen that also uses gluten, so we can’t promise anything is free of it.
+                  Allergies? Mention them in your notes, or{' '}
+                  <a href={site.whatsappUrl} target="_blank" rel="noreferrer" className="font-semibold underline">
+                    WhatsApp us
+                  </a>{' '}
+                  before you order.
+                </p>
+              </div>
+            )}
 
             <Turnstile resetKey={turnstileKey} onToken={setToken} />
             <p className="text-center text-xs text-cocoa-400">Nothing is charged now. You’ll pay once you’ve seen your quote.</p>

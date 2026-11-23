@@ -31,6 +31,7 @@ export type MenuProduct = {
   name: string
   description: string | null
   allergens: Allergen[]
+  ingredients?: string[] // heaviest first, from the recipe
   sizes: MenuSize[]
 }
 

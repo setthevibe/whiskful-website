@@ -83,10 +83,21 @@ export function MenuPage() {
               </ul>
 
               {product.allergens.length > 0 && (
-                <p className="mt-4 text-xs text-cocoa-500">
-                  <span className="font-semibold">Contains: </span>
-                  {product.allergens.map((allergen) => allergenLabels[allergen]).join(', ')}
-                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                  <span className="text-xs font-semibold text-cocoa-800">Contains:</span>
+                  {product.allergens.map((allergen) => (
+                    <span key={allergen} className="rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-blush-800">
+                      {allergenLabels[allergen]}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {product.ingredients && product.ingredients.length > 0 && (
+                <details className="mt-3 text-xs text-cocoa-500">
+                  <summary className="cursor-pointer font-semibold text-cocoa-800">Ingredients</summary>
+                  <p className="mt-1">{product.ingredients.join(', ')}</p>
+                </details>
               )}
 
               <div className="mt-auto pt-6">
